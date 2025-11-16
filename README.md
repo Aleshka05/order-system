@@ -11,38 +11,39 @@
 
 </div>
 
-## 📋 О проекте
+## 📋 About the Project
 
-Микросервисная система управления заказами с использованием современных DevOps-инструментов. Проект демонстрирует полный цикл разработки микросервисов с оркестрацией, service discovery и динамической конфигурацией.
+A microservices-based order management system using modern DevOps tools. This project demonstrates the complete lifecycle of microservices development with orchestration, service discovery, and dynamic configuration.
 
-### 🎯 Основные возможности
+### 🎯 Key Features
 
-- ✅ **Микросервисная архитектура** - два независимых сервиса
-- ✅ **Динамическая конфигурация** - через Consul KV store
-- ✅ **Service Discovery** - автоматическое обнаружение сервисов
-- ✅ **Health Checks** - мониторинг состояния сервисов
-- ✅ **Контейнеризация** - Docker для изоляции окружения
-- ✅ **Оркестрация** - Nomad для управления контейнерами
-- ✅ **REST API** - современный API для взаимодействия
+- ✅ **Microservices Architecture** - two independent services
+- ✅ **Dynamic Configuration** - via Consul KV store
+- ✅ **Service Discovery** - automatic service detection
+- ✅ **Health Checks** - service status monitoring
+- ✅ **Containerization** - Docker for environment isolation
+- ✅ **Orchestration** - Nomad for container management
+- ✅ **REST API** - modern API for interaction
 
 
-### 📊 Компоненты системы
+### 📊 System Components
 
-| Компонент | Назначение | Порт | Технологии |
-|-----------|------------|------|------------|
-| **Order Service** | Обработка заказов | 5000 | Python, Flask |
-| **Notification Service** | Уведомления | 5001 | Python, Flask |
+| Component | Purpose | Port | Technologies |
+|-----------|---------|------|--------------|
+| **Order Service** | Order processing | 5000 | Python, Flask |
+| **Notification Service** | Notifications | 5001 | Python, Flask |
 | **Consul** | Service Discovery, Config Store | 8500 | HashiCorp Consul |
-| **Nomad** | Оркестрация контейнеров | 4646 | HashiCorp Nomad |
-| **Docker** | Контейнеризация | - | Docker Engine |
+| **Nomad** | Container orchestration | 4646 | HashiCorp Nomad |
+| **Docker** | Containerization | - | Docker Engine |
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### 📋 Предварительные требования
+### 📋 Prerequisites
 
-Перед началом убедитесь, что у вас установлены:
+Before starting, make sure you have installed:
 
-- **Docker** (версия 20.10+)
-- **Docker Compose** (версия 2.0+)
-- **Git** (для клонирования репозитория)
+- **Docker** (version 20.10+)
+- **Docker Compose** (version 2.0+)
+- **Git** (for cloning the repository)
+
 
