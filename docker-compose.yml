@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  consul-server:
+    image: hashicorp/consul:1.15
+    container_name: consul-server
+    ports:
+      - "8500:8500"
+    command: "agent -server -bootstrap-expect=1 -client=0.0.0.0"
+
+  nomad-server:
+    image: hashicorp/nomad:1.6
+    container_name: nomad-server
+    ports:
+      - "4646:4646"
+      - "4647:4647"
+      - "4648:4648"
+    command: "agent -dev -bind=0.0.0.0 -config=/etc/nomad.d/config.hcl"
+    volumes:
+      - ./nomad:/etc/nomad.d
+    depends_on:
+      - consul-server
+    privileged: true
+
+  order-service:
+    build: ./order-service
+    ports:
+      - "5000:5000"
+    environment:
+      - CONSUL_HOST=consul-server
+    depends_on:
+      - consul-server
+
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "5001:5001"
+    depends_on:
+      - consul-server
